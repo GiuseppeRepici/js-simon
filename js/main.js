@@ -3,6 +3,8 @@ const stampaNumRandom = document.getElementById("main");
 const arrayUtente = [];
 let contNumAzzeccati = -1;
 const arrayNumAzzeccati = [];
+let sec= 5;
+const secondi = document.getElementById("secondi");
 
 
 function randomNum() {
@@ -16,7 +18,7 @@ function randomNum() {
 
 function stampaNumeriRandom() {
     stampaNumRandom.innerHTML = arrayNumRandom;
-    
+    setInterval(timer, 1000);
 }
 
 function scomparireNumRan() {
@@ -47,10 +49,20 @@ function controlloNumeri() {
     
 }
 
+function timer() {
+    secondi.innerHTML= "secondis:" + `${sec}`;
+    if (sec>0){
+        sec--;
+    } else{
+        secondi.innerHTML= "";
+        scomparireNumRan();
+        setTimeout(chiediNumeri, 100);
+    }
+}
+
 randomNum();
 stampaNumeriRandom();
-setTimeout(scomparireNumRan, 2000);
-setTimeout(chiediNumeri, 2100);
+
 
 
 
