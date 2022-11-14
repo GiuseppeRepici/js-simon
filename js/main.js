@@ -1,7 +1,7 @@
 const arrayNumRandom = [];
 const stampaNumRandom = document.getElementById("main");
 const arrayUtente = [];
-let contNumAzzeccati = 0;
+let contNumAzzeccati = -1;
 const arrayNumAzzeccati = [];
 
 
@@ -39,7 +39,12 @@ function controlloNumeri() {
         }
     }
     console.log(arrayNumRandom);
-    stampaNumRandom.innerHTML=  `${contNumAzzeccati} numero/i azzeccato/i e sono:` + arrayNumAzzeccati;
+    if(contNumAzzeccati<0){
+        stampaNumRandom.innerHTML= "nessun numero azzeccato, complimenti!";
+    } else{
+        stampaNumRandom.innerHTML=  `${contNumAzzeccati} numero/i azzeccato/i ed è/sono:` + arrayNumAzzeccati;
+    }
+    
 }
 
 randomNum();
