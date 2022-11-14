@@ -5,7 +5,7 @@ let contNumAzzeccati = 0;
 const arrayNumAzzeccati = [];
 let sec= 5;
 const secondi = document.getElementById("secondi");
-let x = setInterval(timer, 1000);
+let funzioneTimer = setInterval(timer, 1000);
 
 function randomNum() {
     for(let i=0; arrayNumRandom.length<5; i++){
@@ -31,7 +31,7 @@ function chiediNumeri() {
         arrayUtente.push(numeroUtente);
     }
     controlloNumeri()
-    clearInterval(x);
+    clearInterval(funzioneTimer);
 }
 
 function controlloNumeri() {
