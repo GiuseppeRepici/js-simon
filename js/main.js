@@ -1,11 +1,11 @@
 const arrayNumRandom = [];
 const stampaNumRandom = document.getElementById("main");
 const arrayUtente = [];
-let contNumAzzeccati = -1;
+let contNumAzzeccati = 0;
 const arrayNumAzzeccati = [];
 let sec= 5;
 const secondi = document.getElementById("secondi");
-
+let x = setInterval(timer, 1000);
 
 function randomNum() {
     for(let i=0; arrayNumRandom.length<5; i++){
@@ -18,7 +18,7 @@ function randomNum() {
 
 function stampaNumeriRandom() {
     stampaNumRandom.innerHTML = arrayNumRandom;
-    setInterval(timer, 1000);
+    
 }
 
 function scomparireNumRan() {
@@ -31,6 +31,7 @@ function chiediNumeri() {
         arrayUtente.push(numeroUtente);
     }
     controlloNumeri()
+    clearInterval(x);
 }
 
 function controlloNumeri() {
@@ -41,7 +42,7 @@ function controlloNumeri() {
         }
     }
     console.log(arrayNumRandom);
-    if(contNumAzzeccati<0){
+    if(contNumAzzeccati<1){
         stampaNumRandom.innerHTML= "nessun numero azzeccato, complimenti!";
     } else{
         stampaNumRandom.innerHTML=  `${contNumAzzeccati} numero/i azzeccato/i ed è/sono:` + arrayNumAzzeccati;
@@ -57,7 +58,7 @@ function timer() {
         secondi.innerHTML= "";
         scomparireNumRan();
         setTimeout(chiediNumeri, 100);
-        return;
+        
     }
 }
 
