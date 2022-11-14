@@ -57,6 +57,7 @@ function timer() {
         secondi.innerHTML= "";
         scomparireNumRan();
         setTimeout(chiediNumeri, 100);
+        return;
     }
 }
 
